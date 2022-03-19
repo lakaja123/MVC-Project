@@ -1,13 +1,14 @@
 <?php
-    $title = 'Регистрация в системе';
+<?php
+    $title = 'Автоизация в системе';
     $css = [
         'register/main.css'
     ];
-    @include_once 'header.php';
+    @include_once __DIR__ '/../header.php';
 ?>
 
-<?= ( isset($_GET['error_password'])
-    ? "<div class='error'>Пароли не совпали!</div>"
+<?= ( isset($_GET['error_auth'])
+    ? "<div class='alert alert-danger'>Логин и пароль не верный!</div>"
     : "" )
 ?>
     <div class="container">
@@ -15,10 +16,6 @@
             <div class="col"></div>
             <div class="col-6 border border-1 rounded-2 mt-2 p-2">
                 <form action="" method="POST">
-                    <div class="mb-3">
-                        <label for="inputName" class="form-label">Ваше ФИО:</label>
-                        <input type="text" name="name" <?= $isError('name', true) ?> id="inputName" placeholder="Фамилия Имя Отчество">
-                        <?= $isError('name') ?>
                     </div>
                     <div class="mb-3">
                         <label for="inputLogin" class="form-label">Ваш логин:</label>
@@ -30,15 +27,10 @@
                         <input type="password" name="password" <?= $isError('password', true) ?> id="inputPassword" placeholder="Укажите пароль:" required>
                         <?= $isError('password') ?>
                     </div>
-                    <div class="mb-3">
-                        <label for="inputPasswordConfirmed" class="form-label">Ваш повтор пароля:</label>
-                        <input type="password" name="password_confirmed" <?= $isError('password_confirmed', true) ?> id="inputPasswordConfirmed" placeholder="Укажите пароль повторно:" required>
-                        <?= $isError('password_confirmed') ?>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Регистрация</button>
+                    <button type="submit" class="btn btn-primary">Автоизация</button>
                 </form>
             </div>
             <div class="col"></div>
         </div>
     </div>
-<?php @include_once 'footer.php'; ?>
+<?php @include_once __DIR__ '/../footer.php'; ?>
