@@ -1,6 +1,6 @@
 <?php
     $title = 'Успешная регистрация';
-    include_once __DIR__ "/../header.php";
+    include_once __DIR__ . "/../header.php";
 ?>
 <div class="container">
     <div class="row">
@@ -17,4 +17,4 @@
     </div>
 </div>
 <?php
-    include_once __DIR__ "/../footer.php";
+    include_once __DIR__ . "/../footer.php";
